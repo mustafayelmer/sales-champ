@@ -1,0 +1,72 @@
+{
+  "name": "sales-champ",
+  "version": "1.0.1",
+  "description": "Address microservice",
+  "main": "dist/index.js",
+  "keywords": [
+    "address"
+  ],
+  "files": [
+    "dist/*"
+  ],
+  "scripts": {
+    "clear": "rimraf dist",
+    "lint": "eslint src/**/*.ts",
+    "build": "npm run clear && tsc && cp -rv src/data dist/data/",
+    "test": "jest --config=jest.json",
+    "test:watch": "jest --watch --config=jest.json",
+    "test:coverage": "jest --config=jest.json --coverage --coverageDirectory=coverage",
+    "start": "npm run build && npm run run:js",
+    "run:js": "node dist/index.js",
+    "run:ts": "node -r ts-node/register src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mustafayelmer/sales-champ.git"
+  },
+  "author": {
+    "name": "Mustafa Yelmer",
+    "email": "mustafayelmer@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "email": "mustafayelmer@gmail.com",
+    "url": "https://github.com/mustafayelmer/sales-champ/issues"
+  },
+  "homepage": "https://github.com/mustafayelmer/sales-champ#readme",
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.10.3",
+    "@types/uuid": "^8.3.1",
+    "@typescript-eslint/eslint-plugin": "^4.13.0",
+    "@typescript-eslint/parser": "^4.13.0",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "jest": "^27.2.5",
+    "prettier": "^2.2.1",
+    "ts-jest": "^27.0.5",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.1.4"
+  },
+  "dependencies": {
+    "@nestjs/common": "^8.0.11",
+    "@nestjs/core": "^8.0.11",
+    "@nestjs/mongoose": "^9.0.0",
+    "@nestjs/platform-express": "^8.0.11",
+    "@nestjs/swagger": "^5.1.0",
+    "@nestjs/testing": "^8.0.11",
+    "axios": "^0.23.0",
+    "class-transformer": "^0.4.0",
+    "class-validator": "^0.13.1",
+    "dotenv": "^10.0.0",
+    "helmet": "^4.6.0",
+    "mongoose": "^6.0.10",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "rxjs": "^7.4.0",
+    "swagger-ui-express": "^4.1.6"
+  }
+}
